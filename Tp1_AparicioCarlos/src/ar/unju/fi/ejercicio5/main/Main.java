@@ -6,8 +6,9 @@ public class Main {
 	public static void main(String[] args) {
 		int num;
 		System.out.println("Ingrese un numero del 1 al 9: ");
-		Scanner scanner = new Scanner(System.in);
-		num = scanner.nextInt();
+		try (Scanner scanner = new Scanner(System.in)) {
+			num = scanner.nextInt();
+		}
 		if (num >= 1 && num <= 9) {
 			for (int i=1;i<=10;i++) {
 				System.out.println(num+" x "+i+" = "+num*i);

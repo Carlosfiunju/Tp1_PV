@@ -8,8 +8,9 @@ public class Main {
 		int num;
 		int acum=1;
 		System.out.println("Ingrese un numero entre 0 y 10: ");
-		Scanner scanner = new Scanner (System.in);
-		num = scanner.nextInt();
+		try (Scanner scanner = new Scanner (System.in)) {
+			num = scanner.nextInt();
+		}
 		if (num >= 0 && num <= 10) {
 			if (num == 0) {
 				System.out.println("El factorial es: "+acum);
